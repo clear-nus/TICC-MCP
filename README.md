@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-You will need to install [`pypy`](https://pypy.org/download.html).
+You will need to install [`pypy3`](https://pypy.org/download.html).
 
 ## Instruction for basic execution
 
@@ -69,7 +69,7 @@ In this setup, the number of shopping lists is fixed at 2 and number of search s
 
 The shopping lists and the actual capabilities setup are as follows:
 
-#### 2 item types
+#### Two item types
 
 _Shopping lists_
 
@@ -90,7 +90,7 @@ Item 1 | Item 2
 --- | --- 
 100\% | 50\%
 
-#### 3 item types
+#### Three item types
 
 _Shopping lists_
 
@@ -111,7 +111,7 @@ Item 1 | Item 2 | Item 3
 --- | --- | --- 
 100\% | 0\% | 100\%
 
-#### 4 item types
+#### Four item types
 
 _Shopping lists_
 
@@ -132,7 +132,7 @@ Item 1 | Item 2 | Item 3 | Item 4
 --- | --- | --- | --- 
 100\% | 0\% | 100\% | 10\%
 
-#### 5 item types
+#### Five item types
 
 _Shopping lists_
 
@@ -156,4 +156,4 @@ Item 1 | Item 2 | Item 3 | Item 4 | Item 5
 ### Setup 3 - Varying number of shopping lists
 In this setup, the number of shopping items is fixed at 5 and number of search samples is fixed at 50000. The number of shopping lists is varied from 5 to 10. 
 
-For an n-shopping list setup, use the first n shopping lists used for Setup 1. Vary `reward_space` in `driver.py` accordingly. The actual capability setup is also the same as Setup 1. 
+For an n-shopping list setup, use the first n shopping lists used for Setup 1. Vary `reward_space` in `driver.py` accordingly. The actual capabilities setup is also the same as Setup 1. 
