@@ -4,7 +4,7 @@
 
 You will need to install [`pypy3`](https://pypy.org/download.html).
 
-## Instruction for basic execution
+## Instructions for basic execution
 
 To execute TICC-POMCP solver, run
 ```
@@ -16,7 +16,7 @@ To execute POMCP solver without capability models, run
 pypy3 'standard POMCP/driver.py' <seed>
 ```
 
-## Instruction for reproducing experimental results
+## Instructions for reproducing experimental results
 
 To reproduce experimental results for TICC-POMCP solver, run
 ```
