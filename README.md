@@ -13,7 +13,7 @@ pypy3 driver.py <seed>
 
 To execute POMCP solver without capability models, run
 ```
-pypy3 'standard POMCP\driver.py' <seed>
+pypy3 'standard POMCP/driver.py' <seed>
 ```
 
 ## Instruction for reproducing experimental results
