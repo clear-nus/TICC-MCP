@@ -1,6 +1,14 @@
 # TICC-MCP
 
-## Prerequisites
+## Table of Contents
+- [Setup](#setup)
+- [Instructions for basic execution](#instructions-for-basic-execution)
+- [Instructions for reproducing simulation experiment results](#instructions-for-reproducing-simulation-experiment-results)
+- [Experimental setups](#experimental-setups)
+- [Developer Guide](#developer-guide)
+- [Support](#support)
+
+## Setup
 
 You will need to install [`PyPy3`](https://pypy.org/download.html).
 
@@ -16,7 +24,7 @@ To execute POMCP solver without capability models, run
 pypy3 'standard POMCP/driver.py' <seed>
 ```
 
-## Instructions for reproducing experimental results
+## Instructions for reproducing simulation experiment results
 
 To reproduce experimental results for TICC-MCP solver, run
 ```
@@ -31,6 +39,8 @@ bash std_job_launcher.sh
 Redirect `sys.stdout` to write output to log files.
 
 ## Experimental setups
+ The experimental setups can be adjusted in `drive.py`.
+
 ### Setup 1 - Varying number of samples
 In this setup, the number of shopping lists is fixed at 10 and number of shopping item types is fixed at 5. The number of search samples is varied from 5000 to 50000. Vary `num_iter` in `driver.py` based on number of search samples. 
 
@@ -159,18 +169,20 @@ In this setup, the number of shopping items is fixed at 5 and number of search s
 For an n-shopping list setup, use the first n shopping lists used for Setup 1. Vary `reward_space` in `driver.py` accordingly. The actual capabilities setup is also the same as Setup 1.
 
 ## Developer Guide
-The main solver program is located in the root level. It is modularized into several components:
+The main solver program is located at the root level. It is modularized into several main components:
 
 * **Driver**: The driver coordinates the functions of the other components. It first takes in input parameters and sets up the TICC-POMDP environment and the TICC-MCP solver. It then executes the solver. After every robot action, the driver takes in a human action input from either an actual human or a simulated human. It is also responsible in returning the intermediate and final results.
 * **Solver**: The solver implements the TICC-MCP algorithm. It is responsible for executing the search, as well as building and maintaining the search tree.
 * **Search Tree**: The search tree comprises two types of nodes: 1) Robot action node which represents an action taken by the robot 2) Human action node which represents an action taken by the human. It keeps track of the necessary statistics and stores the tree structure.
 * **Environment**: The environment contains the TICC-POMDP model in which the robot and human operate. It has all the essential physics and information of the world.
 
-The high level architecture is as follows.
+The high level architecture is as follows:
 
-![architecture](./architecture.png)
+![architecture](./architecture.png){width=60%}
 
 A similar implementation is done for the standard POMCP algorithm without capability models which can be found under `/standard POMCP`. To ensure the correctness of the program, there are unit tests for all testable atomic functions which can found under `/tests`.
 
+_For better efficiency, the sparse capability model representation can be reduced a flatten list of important entries (two entries for each action)._
+
 ## Support
-Reach out to me at [joshualeekaisheng@gmail.com](joshualeekaisheng@gmail.com).
+For further questions, reach out to me at [joshualeekaisheng@gmail.com](joshualeekaisheng@gmail.com).
