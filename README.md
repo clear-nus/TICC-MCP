@@ -2,9 +2,9 @@
 
 ## Table of Contents
 - [Setup](#setup)
-- [Instructions for basic execution](#instructions-for-basic-execution)
-- [Instructions for reproducing simulation experiment results](#instructions-for-reproducing-simulation-experiment-results)
-- [Experimental setups](#experimental-setups)
+- [Instructions for Basic Execution](#instructions-for-basic-execution)
+- [Instructions for Reproducing Simulation Experiment Results](#instructions-for-reproducing-simulation-experiment-results)
+- [Experimental Setups](#experimental-setups)
 - [Developer Guide](#developer-guide)
 - [Support](#support)
 
@@ -12,7 +12,7 @@
 
 You will need to install [`PyPy3`](https://pypy.org/download.html).
 
-## Instructions for basic execution
+## Instructions for Basic Execution
 
 To execute TICC-MCP solver, run
 ```
@@ -24,7 +24,7 @@ To execute POMCP solver without capability models, run
 pypy3 'standard POMCP/driver.py' <seed>
 ```
 
-## Instructions for reproducing simulation experiment results
+## Instructions for Reproducing Simulation Experiment Results
 
 To reproduce experimental results for TICC-MCP solver, run
 ```
@@ -38,10 +38,10 @@ bash std_job_launcher.sh
 
 Redirect `sys.stdout` to write output to log files.
 
-## Experimental setups
+## Experimental Setups
  The experimental setups can be adjusted in `drive.py`.
 
-### Setup 1 - Varying number of samples
+### Setup 1 - Varying Number of Samples
 In this setup, the number of shopping lists is fixed at 10 and number of shopping item types is fixed at 5. The number of search samples is varied from 5000 to 50000. Vary `num_iter` in `driver.py` based on number of search samples. 
 
 The shopping lists and the actual capabilities setup are as follows:
@@ -74,12 +74,12 @@ Item 1 | Item 2 | Item 3 | Item 4 | Item 5
 100\% | 0\% | 100\% | 100\% | 10\% 
 
 
-### Setup 2 - Varying number of shopping item types
+### Setup 2 - Varying Number of Shopping Item Types
 In this setup, the number of shopping lists is fixed at 2 and number of search samples is fixed at 50000. The number of shopping item types is varied from 2 to 5. Vary `reward_space` in `driver.py` accordingly.
 
 The shopping lists and the actual capabilities setup are as follows:
 
-#### Two item types
+#### Two Item Types
 
 _Shopping lists_
 
@@ -100,7 +100,7 @@ Item 1 | Item 2
 --- | --- 
 100\% | 50\%
 
-#### Three item types
+#### Three Item Types
 
 _Shopping lists_
 
@@ -121,7 +121,7 @@ Item 1 | Item 2 | Item 3
 --- | --- | --- 
 100\% | 0\% | 100\%
 
-#### Four item types
+#### Four Item Types
 
 _Shopping lists_
 
@@ -142,7 +142,7 @@ Item 1 | Item 2 | Item 3 | Item 4
 --- | --- | --- | --- 
 100\% | 0\% | 100\% | 10\%
 
-#### Five item types
+#### Five Item Types
 
 _Shopping lists_
 
@@ -163,7 +163,7 @@ Item 1 | Item 2 | Item 3 | Item 4 | Item 5
 --- | --- | --- | --- | ---
 100\% | 0\% | 100\% | 100\% | 10\%
 
-### Setup 3 - Varying number of shopping lists
+### Setup 3 - Varying Number of Shopping Lists
 In this setup, the number of shopping items is fixed at 5 and number of search samples is fixed at 50000. The number of shopping lists is varied from 5 to 10. 
 
 For an n-shopping list setup, use the first n shopping lists used for Setup 1. Vary `reward_space` in `driver.py` accordingly. The actual capabilities setup is also the same as Setup 1.
