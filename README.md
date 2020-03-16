@@ -1,4 +1,4 @@
-# TICC-POMCP
+# TICC-MCP
 
 ## Prerequisites
 
@@ -6,7 +6,7 @@ You will need to install [`pypy3`](https://pypy.org/download.html).
 
 ## Instructions for basic execution
 
-To execute TICC-POMCP solver, run
+To execute TICC-MCP solver, run
 ```
 pypy3 driver.py <seed>
 ```
@@ -18,7 +18,7 @@ pypy3 'standard POMCP/driver.py' <seed>
 
 ## Instructions for reproducing experimental results
 
-To reproduce experimental results for TICC-POMCP solver, run
+To reproduce experimental results for TICC-MCP solver, run
 ```
 bash job_launcher.sh
 ```
@@ -156,4 +156,21 @@ Item 1 | Item 2 | Item 3 | Item 4 | Item 5
 ### Setup 3 - Varying number of shopping lists
 In this setup, the number of shopping items is fixed at 5 and number of search samples is fixed at 50000. The number of shopping lists is varied from 5 to 10. 
 
-For an n-shopping list setup, use the first n shopping lists used for Setup 1. Vary `reward_space` in `driver.py` accordingly. The actual capabilities setup is also the same as Setup 1. 
+For an n-shopping list setup, use the first n shopping lists used for Setup 1. Vary `reward_space` in `driver.py` accordingly. The actual capabilities setup is also the same as Setup 1.
+
+## Developer Guide
+The main solver program is located in the root level. It is modularized into several components:
+
+* **Driver**: The driver coordinates the functions of the other components. It first takes in input parameters and sets up the TICC-POMDP environment and the TICC-MCP solver. It then executes the solver. After every robot action, the driver takes in a human action input from either an actual human or a simulated human. It is also responsible in returning the intermediate and final results.
+* **Solver**: The solver implements the TICC-MCP algorithm. It is responsible for executing the search, as well as building and maintaining the search tree.
+* **Search Tree**: The search tree comprises two types of nodes: 1) Robot action node which represents an action taken by the robot 2) Human action node which represents an action taken by the human. It keeps track of the necessary statistics and stores the tree structure.
+* **Environment**: The environment contains the TICC-POMDP model in which the robot and human operate. It has all the essential physics and information of the world.
+
+The high level architecture is as follows.
+
+![architecture](./architecture.png)
+
+A similar implementation is done for the standard POMCP algorithm without capability models which can be found under `/standard POMCP`. To ensure the correctness of the program, there are unit tests for all testable atomic functions which can found under `/tests`.
+
+## Support
+Reach out to me at [joshualeekaisheng@gmail.com](joshualeekaisheng@gmail.com).
