@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-You will need to install [`pypy3`](https://pypy.org/download.html).
+You will need to install [`PyPy3`](https://pypy.org/download.html).
 
 ## Instructions for basic execution
 
