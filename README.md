@@ -179,10 +179,10 @@ The main solver program is located at the root level. It is modularized into sev
 The high level architecture is as follows:
 
 <center>
-    <img src="./architecture.png" width="70%">
+    <img src="./architecture.png" width="50%">
 <center>
 
-A similar implementation is done for the standard POMCP algorithm without capability models which can be found under `/standard POMCP`. To ensure the correctness of the program, there are unit tests for all testable atomic functions which can found under `/tests`.
+A similar implementation is done for the standard POMCP algorithm without capability models, which can be found under `/standard POMCP`. To ensure the correctness of the program, there are unit tests for all testable atomic functions, which can be found under `/tests`.
 
 _For better efficiency, the sparse capability model representation can be reduced a flatten list of important entries (two entries for each action)._
 
