@@ -39,7 +39,7 @@ bash std_job_launcher.sh
 Redirect `sys.stdout` to write output to log files.
 
 ## Experimental Setups
- The experimental setups can be adjusted in `drive.py`.
+ The experimental setups can be adjusted in `driver.py`.
 
 ### Setup 1 - Varying Number of Samples
 In this setup, the number of shopping lists is fixed at 10 and number of shopping item types is fixed at 5. The number of search samples is varied from 5000 to 50000. Vary `num_iter` in `driver.py` based on number of search samples. 
