@@ -7,10 +7,10 @@ from human_action_node import *
 from robot_action_node import *
 
 
-class TICCPOMCPSolver:
+class TICCMCPSolver:
     def __init__(self, epsilon, env, root_action_node, num_iter, c):
         """
-        Initializes an instance of TICC-POMCP solver.
+        Initializes an instance of TICC-MCP solver.
 
         :param epsilon: tolerance factor to terminate rollout
         :type epsilon: float

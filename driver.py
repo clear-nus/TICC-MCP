@@ -5,7 +5,7 @@ import random as rand
 import sys
 
 from environment import *
-from TICC_POMCP_solver import *
+from TICC_MCP_solver import *
 from human_action_node import *
 from robot_action_node import *
 from root_node import *
@@ -19,8 +19,8 @@ class Driver:
 
         :param env: the environment
         :type env: Environment
-        :param solver: the TICC-POMCP solver
-        :type solver: TICCPOMCPSolver
+        :param solver: the TICC-MCP solver
+        :type solver: TICCMCPSolver
         :param num_steps: the number of action steps allowed
         :type num_steps: integer
         :param simulated_human: the simulated human
@@ -393,11 +393,11 @@ if __name__ == "__main__":
         env = Environment(robot_action_space, human_action_space, reward_space,
                           initial_world_state, true_theta, true_chi_h, true_chi_r, capability_calibration_distance, human_behaviour, beta, gamma, c, e, capability_calibration_constant)
         root_node = RootNode(env, initial_belief)
-        TICC_POMCP_solver = TICCPOMCPSolver(
+        TICC_MCP_solver = TICCMCPSolver(
             epsilon, env, root_node, num_iter, c)
         simulated_human = SimulatedHuman(env)
 
-        driver = Driver(env, TICC_POMCP_solver, num_steps, simulated_human)
+        driver = Driver(env, TICC_MCP_solver, num_steps, simulated_human)
 
         # Executes num_rounds of search (calibration)
         num_rounds = 5
