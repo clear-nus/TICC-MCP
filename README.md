@@ -1,4 +1,5 @@
 # TICC-MCP
+This repo contains supplementary code for our paper "Getting to Know One Another: Calibrating Intent, Capabilities and Trust for Human-Robot Collaboration" (IROS, 2020).
 
 ## Table of Contents
 - [Setup](#setup)
@@ -188,3 +189,14 @@ _For better efficiency, the sparse capability model representation can be reduce
 
 ## Support
 For further questions, reach out to me at [joshualeekaisheng@gmail.com](joshualeekaisheng@gmail.com).
+
+## Citing Us
+If you use this code or find it useful, please cite our paper: 
+```
+@inproceedings{lee2020trust,
+    title={Getting to Know One Another: Calibrating Intent, Capabilities and Trust for Human-Robot Collaboration}, 
+    author={Joshua Lee and Jeffrey Fong and Bing Cai Kok and and Harold Soh},
+    booktitle = {{IEEE/RSJ International Conference on Intelligent Robots and Systems} (Accepted)}, 
+    year      = {2020}, 
+    month     = {October}}
+```
