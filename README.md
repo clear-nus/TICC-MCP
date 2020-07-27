@@ -1,5 +1,5 @@
 # TICC-MCP
-This repo contains supplementary code for our paper "Getting to Know One Another: Calibrating Intent, Capabilities and Trust for Human-Robot Collaboration" (IROS, 2020).
+This repo contains supplementary code for our paper [Getting to Know One Another: Calibrating Intent, Capabilities and Trust for Human-Robot Collaboration](https://haroldsoh.com/wp-content/uploads/2020/06/Lee2020Trust.pdf) (IROS, 2020).
 
 ## Table of Contents
 - [Setup](#setup)
